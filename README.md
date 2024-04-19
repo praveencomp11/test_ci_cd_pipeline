@@ -1,4 +1,4 @@
-### Working code for CI/CD pipeline to deploy in package and container registry using docker
+## Working code for CI/CD pipeline to deploy in package and container registry using docker
 
 #### Check the uploaded code
   1. Artifacts can be downloaded directly from package registry
