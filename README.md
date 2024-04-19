@@ -43,3 +43,11 @@ When asked for password enter personal access token e.g.: glpat-EGonM_wNMJSafxHL
 13. Volume creation for automatic changes
     docker run -name any_name_to_container  -p 5500:5500 --rm -v /Users/anilsidhu/Desktop/basic-app:/app basic-app
 ```
+References:
+1. https://gitlab.com/nanuchi/gitlab-cicd-crash-course/-/blob/main/.gitlab-ci.yml?ref_type=heads
+2. https://www.youtube.com/watch?v=ZJZGJTM23z0
+3. https://www.youtube.com/watch?v=NHH--7VXIKk&t=2s
+4. https://kobiton.com/blog/implementing-a-c-ci-cd-pipeline/
+5. https://www.youtube.com/watch?v=4zSTXO7z_3w&list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn&index=2 (Hindi version)
+6. https://www.youtube.com/watch?v=KUECJHlV1LE
+7. https://www.youtube.com/watch?v=SZvwDqSPuTU
