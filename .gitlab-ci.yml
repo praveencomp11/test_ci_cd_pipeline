@@ -1,0 +1,50 @@
+variables:
+  IMAGE_NAME: nanajanashia/demo-app
+  IMAGE_TAG: python-app-1.0
+
+stages:
+   - build
+   - push-to-registry
+   - build_image
+
+build-job:
+    stage: build
+    image: python:3.11.2-slim-buster
+    before_script:
+        - apt update && apt install -y binutils && apt install -y zip
+    script:
+        - mkdir artifacts
+        - ls -al
+        - pip install -r requirements.txt
+        - pip install pyinstaller
+        - pyinstaller app.py
+        - ls -al
+        - cd dist
+        - zip -r app app
+        - ls -al
+        - cp app.zip ../artifacts/
+    artifacts:
+        paths:
+            - artifacts
+
+push-job:
+    stage: push-to-registry
+    image: alpine
+    before_script:
+        - apk update && apk add curl
+    script:
+        - ls -al
+        - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file artifacts/app.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/application/0.0.1/app.zip"'
+    needs: ['build-job']
+
+build_image:
+  stage: build
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp .
+    - docker push registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp
+
