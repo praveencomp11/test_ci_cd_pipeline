@@ -4,14 +4,14 @@
   1. Artifacts can be downloaded directly from package registry
   2. To download from container registry follow the instructions below:
 ```
-1. docker login registry.gitlab.com -u praveen.hore@gmail.com
+  docker login registry.gitlab.com -u praveen.hore@gmail.com
 ```
 When asked for password enter personal access token e.g.: glpat-EGonM_wNMJSafxHLHzFm
 ```
-2.docker pull registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp
+  docker pull registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp
 ```
 ```
-3. docker run registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp
+  docker run registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp
 ```
 ### Docker commands
 ```
