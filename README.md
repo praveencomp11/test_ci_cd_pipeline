@@ -6,7 +6,7 @@
 ```
   docker login registry.gitlab.com -u praveen.hore@gmail.com
 ```
-When asked for password enter personal access token e.g.: glpat-EGonM_wNMJSafxHLHzFm
+When asked for password enter personal access token e.g. test_NMJSafxHLHzFm
 ```
   docker pull registry.gitlab.com/praveencomp11/test_ci_cd_pipeline:myfirstpythonapp
 ```
